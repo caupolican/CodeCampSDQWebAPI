@@ -31,7 +31,7 @@ namespace CodeCampSDQ.Models
     }
 
 
-    public class CodeCampSDQContextInitializer : DropCreateDatabaseIfModelChanges<CodeCampSDQContext>
+    public class CodeCampSDQContextInitializer : DropCreateDatabaseAlways<CodeCampSDQContext>
     {
         protected override void Seed(CodeCampSDQContext context)
         {

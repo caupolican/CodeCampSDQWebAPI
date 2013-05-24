@@ -33,6 +33,13 @@
     <WarningLevel>4</WarningLevel>
     <PublishDatabaseSettings>
       <Objects>
+        <ObjectGroup Name="CodeCampSDQContext-Deployment" Order="1" xmlns="">
+          <Destination Path="Server=tcp:fayyw0l671.database.windows.net,1433%3bDatabase=CodeCampSDQWebApiDB%3bUser ID=CodeCampSDQWebApiDbUser%40fayyw0l671%3bPassword={your_password_here}%3bTrusted_Connection=False%3bEncrypt=True%3bConnection Timeout=30%3b" />
+          <Object Type="DbFullSql">
+            <PreSource Path="Data Source=%28LocalDb%29\v11.0%3bAttachDbFilename=|DataDirectory|\CodeCampSDQ.mdf%3bInitial Catalog=CodeCampSDQ%3bIntegrated Security=True" ScriptSchema="True" ScriptData="True" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Debug\AutoScripts\CodeCampSDQContext-Deployment_SchemaAndData.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
       </Objects>
     </PublishDatabaseSettings>
   </PropertyGroup>
@@ -247,6 +254,7 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <None Include="Properties\PublishProfiles\codecampsdqwebapi.pubxml" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
