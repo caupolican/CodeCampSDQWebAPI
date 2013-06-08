@@ -46,13 +46,13 @@ namespace CodeCampSDQ.Controllers
         }
 
         // PUT api/Speaker/5
-        public HttpResponseMessage PutSpeaker(int id, Speaker session)
+        public HttpResponseMessage PutSpeaker(int id, Speaker speaker)
         {
-            if (ModelState.IsValid && id == session.Id)
+            if (ModelState.IsValid && id == speaker.Id)
             {
                 try
                 {
-                    repository.InsertOrUpdate(session);
+                    repository.InsertOrUpdate(speaker);
                     repository.Save();
                 }
                 catch (DbUpdateConcurrencyException)
@@ -69,13 +69,13 @@ namespace CodeCampSDQ.Controllers
         }
 
         // POST api/Speaker
-        public HttpResponseMessage PostSpeaker(Speaker session)
+        public HttpResponseMessage PostSpeaker(Speaker speaker)
         {
             if (ModelState.IsValid)
             {
                 try
                 {
-                    repository.InsertOrUpdate(session);
+                    repository.InsertOrUpdate(speaker);
                     repository.Save();
                 }
                 catch (DbUpdateConcurrencyException)
@@ -83,8 +83,8 @@ namespace CodeCampSDQ.Controllers
                     return Request.CreateResponse(HttpStatusCode.NotFound);
                 }
 
-                HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.Created, session);
-                response.Headers.Location = new Uri(Url.Link("DefaultApi", new { id = session.Id }));
+                HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.Created, speaker);
+                response.Headers.Location = new Uri(Url.Link("DefaultApi", new { id = speaker.Id }));
                 return response;
             }
             else

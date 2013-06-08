@@ -1,4 +1,7 @@
 CodeCampSDQWebAPI
 =================
 
-Code Camp Santo Domingo 2012 Server API
+This is the backend API for the CodeCampSDQ Conference app.  
+
+Currently deployed at: http://codecampsdqwebapi.azurewebsites.net/
+
